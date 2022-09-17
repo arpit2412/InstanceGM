@@ -75,6 +75,15 @@ To run this project, you will need to add the following environment variables to
 - [@Gustavo Carneiro](https://scholar.google.com/citations?user=E0TtOWAAAAAJ&hl=en)
 
 
+## Please Cite
+```
+ @article{garg2022instance,
+  title={Instance-Dependent Noisy Label Learning via Graphical Modelling},
+  author={Garg, Arpit and Nguyen, Cuong and Felix, Rafael and Do, Thanh-Toan and Carneiro, Gustavo},
+  journal={arXiv preprint arXiv:2209.00906},
+  year={2022}
+}
+```
 ## License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 #

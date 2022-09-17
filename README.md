@@ -51,15 +51,15 @@ To run this project, you will need to add the following environment variables to
 
 - Cifar100
 
-![CIFAR100](https://i.ibb.co/qBxxq8y/a-Cifar100.png)
+![CIFAR100](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/Cifar100.png)
 
 - Red Mini-ImageNet
 
-![CIFAR100](https://i.ibb.co/qBxxq8y/a-Cifar100.png)
+![CIFAR100](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/redmini.png)
 
 - Animal-10N
 
-![CIFAR100](https://i.ibb.co/qBxxq8y/a-Cifar100.png)
+![CIFAR100](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/animal10n.png)
 
 ## Authors
 

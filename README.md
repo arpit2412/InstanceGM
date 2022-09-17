@@ -23,6 +23,10 @@ Our code is heavily based on the mentioned two repos
 ## Datasets
 
 - [CIFAR10/100](https://www.cs.toronto.edu/~kriz/cifar.html)
+
+For adding artifical Instance-Dependent noise in CIFAR10/100, we use the code from [Part-dependent Label Noise](https://github.com/xiaoboxia/Part-dependent-label-noise). Please check the `tools.py` file in our repository. 
+
+
 - [Red Mini-ImageNet](https://paperswithcode.com/sota/image-classification-on-red-miniimagenet-20)
 - [Animal-10N](https://docs.activeloop.ai/datasets/animal-animal10n-dataset)
 - [Clothing-1M](https://github.com/Cysu/noisy_label)
@@ -43,6 +47,20 @@ To run this project, you will need to add the following environment variables to
 - The above code is for CIFAR10 only soon all the docker files and for other dataset would be provided.
 
 
+## Results
+
+- Cifar100
+
+![CIFAR100](https://i.ibb.co/qBxxq8y/a-Cifar100.png)
+
+- Red Mini-ImageNet
+
+![CIFAR100](https://i.ibb.co/qBxxq8y/a-Cifar100.png)
+
+- Animal-10N
+
+![CIFAR100](https://i.ibb.co/qBxxq8y/a-Cifar100.png)
+
 ## Authors
 
 - [@Arpit Garg](https://scholar.google.com/citations?user=KOEnJ14AAAAJ&hl=en)
@@ -55,6 +73,6 @@ To run this project, you will need to add the following environment variables to
 ## License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 #
-![Logo](https://i.ibb.co/Jx494Qn/aiml-mono-landscape-600x182.png)
+![Logo](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/aiml_mono-landscape-600x182.png)
 #
 

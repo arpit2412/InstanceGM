@@ -4,7 +4,6 @@
 
 This research focuses on solving noisy label image classfication on instance dependent noise(IDN/Semantic Noise)
 
-- IDN Example
 ![Instance-Dependent Noise](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/Instance.gif)
 
 ## Methodology

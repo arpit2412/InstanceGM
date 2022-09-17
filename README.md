@@ -2,8 +2,10 @@
 # InstanceGM: Instance-Dependent Noisy Label Learning via Graphical Modelling (IEEE/CVF WACV 2023 Round 1)
 
 
-This research focuses on solving noisy label image classfication on instance dependent noise (Semantic Noise)
+This research focuses on solving noisy label image classfication on instance dependent noise(IDN/Semantic Noise)
 
+- IDN Example
+![Instance-Dependent Noise](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/instance.gif)
 
 ## Methodology
 

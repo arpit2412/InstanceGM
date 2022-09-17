@@ -5,6 +5,11 @@
 This research focuses on solving noisy label image classfication on instance dependent noise (Semantic Noise)
 
 
+## Methodology
+
+![Methodology](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/Methodology.png)
+
+- The above graphical model is adopted from [CausalNL](https://proceedings.neurips.cc/paper/2021/file/23451391cd1399019fa0421129066bc6-Paper.pdf)
 ## Dependency Repos
 Our code is heavily based on the mentioned two repos
 - [DivideMix](https://github.com/LiJunnan1992/DivideMix)
@@ -60,7 +65,6 @@ To run this project, you will need to add the following environment variables to
 - Animal-10N
 
 ![CIFAR100](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/animal10n.png)
-
 ## Authors
 
 - [@Arpit Garg](https://scholar.google.com/citations?user=KOEnJ14AAAAJ&hl=en)

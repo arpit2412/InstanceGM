@@ -89,13 +89,13 @@ For installing docker on your system please follow official [Docker Documentatio
 
 - In order to run Red Mini-ImageNet you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
 
-`wandb docker run --gpus 1 -v absolute_path_of_redMini/:/src/red_blue/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_redMini.py "`
+`wandb docker run --gpus 1 -v absolute_path_of_redMini/:/src/red_blue/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_redMini.py"`
 
 - Please replace `absolute_path_of_redMini` with your absolute path of Red Mini-ImageNet dataset
 
 - To record the progress with all the loss curves, accuracy curves and sample images, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials
 
-- Following the literature the noise rates considered were 0.2, 0.4, 0.6, 0.8 (default is 0.2) 
+- Following the literature the noise rates considered were 0.2, 0.4, 0.6, 0.8 (default is 0.2). Can be easily changed adding --r like `python instanceGM_redMini.py --r 0.4` in above command
 
 - CIFAR10/CIFAR100 configurations are followed to run this
 
@@ -130,7 +130,7 @@ For installing docker on your system please follow official [Docker Documentatio
 
 - If you wanna build the image from the files procided in the github repository
 
-`docker build -f Dockerfile_train -t docker_instancegm ."`
+`docker build -f Dockerfile_train -t docker_instancegm .`
 
 
 ## Run without container

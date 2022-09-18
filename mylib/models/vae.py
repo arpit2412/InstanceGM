@@ -11,7 +11,7 @@ __all__ = ["VAE_FASHIONMNIST","VAE_CIFAR10","VAE_SVHN","VAE_CIFAR100","VAE_CLOTH
 
 
 class BaseVAE(nn.Module):
-    def __init__(self, feature_dim=28, num_hidden_layers=1, hidden_size=25, z_dim =10, num_classes=100  ):
+    def __init__(self, feature_dim=28, num_hidden_layers=1, hidden_size=25, z_dim =10, num_classes=100 ):
         super().__init__()
         self.y_encoder = Y_Encoder(feature_dim =feature_dim, num_classes = num_classes, num_hidden_layers=num_hidden_layers+10, hidden_size = hidden_size)
         self.z_encoder = Z_Encoder(feature_dim=feature_dim, num_classes=num_classes, num_hidden_layers=num_hidden_layers, hidden_size = hidden_size, z_dim=z_dim)

@@ -1,0 +1,2 @@
+Epoch:0   Accuracy:6.05
+Epoch:1   Accuracy:14.69

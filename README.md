@@ -46,6 +46,13 @@ To run this project, you will need to add the following environment variables to
 
 ## Run Locally
 
+- Getting the dataset
+
+-CIFAR10
+
+`bash cifar10.sh`
+
+- Run the model
 
 `$ python instanceGM.py --r 0.5`
 

@@ -46,7 +46,7 @@ parser.add_argument('--data_path', default='./cifar-10', type=str, help='path to
 parser.add_argument('--dataset', default='cifar10', type=str)
 parser.add_argument('--z_dim', default=25, type=int)
 args,_ = parser.parse_known_args()
-
+print(args)
 
 # Training
 def train(epoch,net,net2,optimizer,labeled_trainloader,unlabeled_trainloader, vae_model_1, vae_model_2,optimizer_vae, net_1 = True):
@@ -258,7 +258,8 @@ test_log=open('./checkpoint/%s_%.1f_%s'%(args.dataset,args.r,args.noise_mode)+'_
 if args.dataset=='cifar10':
     warm_up = 10
 elif args.dataset=='cifar100':
-    warm_up = 30
+    warm_up = 1
+
 
 # %%
 loader = dataloader.cifar_dataloader(args.dataset,r=args.r,noise_mode=args.noise_mode,batch_size=args.batch_size,num_workers=5,\
@@ -310,7 +311,7 @@ vae_args.LOG_INTERVAL = 100
 vae_args.BATCH_SIZE = args.batch_size
 vae_args.EPOCHS = args.num_epochs
 vae_args.z_dim = args.z_dim
-vae_args.dataset = 'CIFAR10'
+vae_args.dataset = args.dataset
 vae_args.select_ratio = 0.25
 vae_args.epoch_decay_start = 1000
 vae_args.noise_rate = args.r
@@ -358,9 +359,12 @@ def vae_loss(x_hat, data, n_logits, targets, mu, log_var, c_logits, h_c_label):
     l4 = -0.0003 *torch.sum(1 + log_var - mu.pow(2) - log_var.exp())
     return (l1+l2+l3+l4), l1 , l2, l3 ,l4
 
-# %%
-vae_model1 = models.__dict__["VAE_"+"CIFAR10"](z_dim=args.z_dim, num_classes=10)
-vae_model2 = models.__dict__["VAE_"+"CIFAR10"](z_dim=args.z_dim, num_classes=10)
+if args.dataset=='cifar10':
+    vae_model1 = models.__dict__["VAE_"+"CIFAR10"](z_dim=args.z_dim, num_classes=10)
+    vae_model2 = models.__dict__["VAE_"+"CIFAR10"](z_dim=args.z_dim, num_classes=10)
+elif args.dataset=='cifar100':
+    vae_model1 = models.__dict__["VAE_"+"CIFAR100"](z_dim=args.z_dim, num_classes=100)
+    vae_model2 = models.__dict__["VAE_"+"CIFAR100"](z_dim=args.z_dim, num_classes=100)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = {"vae_model1":vae_model1.to(device), "vae_model2":vae_model2.to(device)}
 

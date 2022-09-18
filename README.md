@@ -1,6 +1,7 @@
 
 # InstanceGM: Instance-Dependent Noisy Label Learning via Graphical Modelling (IEEE/CVF WACV 2023 Round 1)
 
+- Abstract 
 Noisy labels are unavoidable yet troublesome in the ecosystem of deep learning because models can easily overfit them. There are many types of label noise, such as symmetric, asymmetric and instance-dependent noise (IDN), with IDN being the only type that depends on image information. Such dependence on image information makes IDN a critical type of label noise to study, given that labelling mistakes are caused in large part by insufficient or ambiguous information about the visual classes present in images. Aiming to provide an effective technique to address IDN, we present a new graphical modelling approach called InstanceGM, that combines discriminative and generative models. The main contributions of InstanceGM are: i) the use of the continuous Bernoulli distribution to train the generative model, offering significant training advantages, and ii) the exploration of a state-of-the-art noisy-label discriminative classifier to generate clean labels from instance-dependent noisy-label samples. InstanceGM is competitive with current noisy-label learning approaches, particularly in IDN benchmarks using synthetic and real-world datasets, where our method shows better accuracy than the competitors in most experiments. 
 
 ![Instance-Dependent Noise](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/Instance.gif)
@@ -9,16 +10,17 @@ Noisy labels are unavoidable yet troublesome in the ecosystem of deep learning b
 
 ![Methodology](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/Methodology.png)
 
-Figure 2. The proposed InstanceGM trains the Classifiers to output clean labels for instance-dependent noisy-label samples. We first
+Figure 2 from [InstanceGM](https://arxiv.org/abs/2209.00906)
+. The proposed InstanceGM trains the Classifiers to output clean labels for instance-dependent noisy-label samples. We first
 warmup our two classifiers (Classifier-{11,12}) using the classification loss, and then with classification loss we train the GMM to separate
 clean and noisy samples with the semi-supervised model MixMatch [5] from the DivideMix [33] stage. Additionally, another set of
 encoders (Encoder-{1,2}) are used to generate the latent image features as depicted in the graphical model from Fig. 1. Furthermore,
 for image reconstruction, the decoders (Decoder-{1,2}) are used by utilizing the continuous Bernoulli loss, and another set of classifiers
 (Classifier-{21,22}) helps to identify the original noisy labels using the standard cross-entropy loss
 
-- [Paper](https://arxiv.org/abs/2209.00906)
+- [InstanceGM-Paper on arxiv](https://arxiv.org/abs/2209.00906)
 
-- The above graphical model is adopted from [CausalNL](https://proceedings.neurips.cc/paper/2021/file/23451391cd1399019fa0421129066bc6-Paper.pdf)
+- The above graphical model (left-section) is adopted from [CausalNL](https://proceedings.neurips.cc/paper/2021/file/23451391cd1399019fa0421129066bc6-Paper.pdf)
 ## Dependency Repos
 Our code is heavily based on the mentioned two repos
 - [DivideMix](https://github.com/LiJunnan1992/DivideMix)
@@ -73,23 +75,29 @@ For installing docker on your system please follow official [Docker Documentatio
 
 - In order to run Animal10N you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
 
-`wandb docker run --gpus 1 -v absolute_path_of_animal10N/:/src/animal10N/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_animal10N.py"`
+`wandb docker run --gpus 1 -v absolute_path_of_animal10N/:/src/animal10N/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_animal10N.py --saved False"`
 
 - Please replace `absolute_path_of_animal10N` with your absolute path of Animal10N dataset
 
 - To record the progress with all the loss curves, accuracy curves and sample images, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials
 
+- Initially when running Animal10N for first time it would save the dataset labels that's why saved is False (by default) but if you are running again you can use the previously saved label and data information by changing `--saved True` parameter in the above command
+
+- CIFAR10/CIFAR100 configurations are followed to run this
+
 ### Running Red Mini-ImageNet (WandB enabled)
 
 - In order to run Red Mini-ImageNet you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
 
-`wandb docker run --gpus 1 -v absolute_path_of_redMini/:/src/red_blue/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_animal10N.py"`
+`wandb docker run --gpus 1 -v absolute_path_of_redMini/:/src/red_blue/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_redMini.py "`
 
 - Please replace `absolute_path_of_redMini` with your absolute path of Red Mini-ImageNet dataset
 
 - To record the progress with all the loss curves, accuracy curves and sample images, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials
 
 - Following the literature the noise rates considered were 0.2, 0.4, 0.6, 0.8 (default is 0.2) 
+
+- CIFAR10/CIFAR100 configurations are followed to run this
 
 ### Running Clothing1M (WandB enabled)
 
@@ -103,7 +111,7 @@ For installing docker on your system please follow official [Docker Documentatio
 
 - Following the literature, pretrained model is used for ResNet, so it might download some pretrained weights automatically 
 
-### Extra commands (Just to play , not needed for running on CIFAR10/CIFAR100)
+### Extra commands (Just to play, not needed for running on CIFAR10/CIFAR100)
 
 - Pull image from docker hub 
 
@@ -129,7 +137,7 @@ For installing docker on your system please follow official [Docker Documentatio
 
 ### Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following libraries from requirements file
 
 `pip install -r requirements.txt`
 
@@ -142,7 +150,6 @@ To run this project, you will need to add the following environment variables to
 `$ python instanceGM.py --r 0.5`
 
 - r is the noise rate
-- The above code is for CIFAR10 only soon all the docker files and for other dataset would be provided.
 
 
 ## Results

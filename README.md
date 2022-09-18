@@ -1,14 +1,22 @@
 
 # InstanceGM: Instance-Dependent Noisy Label Learning via Graphical Modelling (IEEE/CVF WACV 2023 Round 1)
 
-
-This research focuses on solving noisy label image classfication on instance dependent noise(IDN/Semantic Noise)
+Noisy labels are unavoidable yet troublesome in the ecosystem of deep learning because models can easily overfit them. There are many types of label noise, such as symmetric, asymmetric and instance-dependent noise (IDN), with IDN being the only type that depends on image information. Such dependence on image information makes IDN a critical type of label noise to study, given that labelling mistakes are caused in large part by insufficient or ambiguous information about the visual classes present in images. Aiming to provide an effective technique to address IDN, we present a new graphical modelling approach called InstanceGM, that combines discriminative and generative models. The main contributions of InstanceGM are: i) the use of the continuous Bernoulli distribution to train the generative model, offering significant training advantages, and ii) the exploration of a state-of-the-art noisy-label discriminative classifier to generate clean labels from instance-dependent noisy-label samples. InstanceGM is competitive with current noisy-label learning approaches, particularly in IDN benchmarks using synthetic and real-world datasets, where our method shows better accuracy than the competitors in most experiments. 
 
 ![Instance-Dependent Noise](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/Instance.gif)
 
 ## Methodology
 
 ![Methodology](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/Methodology.png)
+
+Figure 2. The proposed InstanceGM trains the Classifiers to output clean labels for instance-dependent noisy-label samples. We first
+warmup our two classifiers (Classifier-{11,12}) using the classification loss, and then with classification loss we train the GMM to separate
+clean and noisy samples with the semi-supervised model MixMatch [5] from the DivideMix [33] stage. Additionally, another set of
+encoders (Encoder-{1,2}) are used to generate the latent image features as depicted in the graphical model from Fig. 1. Furthermore,
+for image reconstruction, the decoders (Decoder-{1,2}) are used by utilizing the continuous Bernoulli loss, and another set of classifiers
+(Classifier-{21,22}) helps to identify the original noisy labels using the standard cross-entropy loss
+
+- [Paper](https://arxiv.org/abs/2209.00906)
 
 - The above graphical model is adopted from [CausalNL](https://proceedings.neurips.cc/paper/2021/file/23451391cd1399019fa0421129066bc6-Paper.pdf)
 ## Dependency Repos

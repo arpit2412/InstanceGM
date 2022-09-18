@@ -334,7 +334,7 @@ stats_log=open('./checkpoint/%s_%.1f_%s'%(args.dataset,args.r,args.noise_mode)+'
 test_log=open('./checkpoint/%s_%.1f_%s'%(args.dataset,args.r,args.noise_mode)+'_acc.txt','w') 
 
 # %%
-warm_up = 1
+warm_up = 30
 
 
 # %%

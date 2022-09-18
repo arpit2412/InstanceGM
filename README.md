@@ -30,7 +30,7 @@ Our code is heavily based on the mentioned two repos
 
 - [CIFAR10/100](https://www.cs.toronto.edu/~kriz/cifar.html)
 
-For adding artifical Instance-Dependent noise in CIFAR10/100, we use the code from [Part-dependent Label Noise](https://github.com/xiaoboxia/Part-dependent-label-noise). Please check the `tools.py` file in our repository. 
+For adding artifical Instance-Dependent noise in CIFAR10/100, we use the code from [Part-dependent Label Noise](https://github.com/xiaoboxia/Part-dependent-label-noise). Please check the `tools.py` file in our repository 
 
 
 - [Red Mini-ImageNet](https://paperswithcode.com/sota/image-classification-on-red-miniimagenet-20)
@@ -63,26 +63,37 @@ For installing docker on your system please follow official [Docker Documentatio
 
 ### Running Animal10N (WandB enabled)
 
-- In order to tun Animal10N you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
+- In order to run Animal10N you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
 
 `wandb docker run --gpus 1 -v absolute_path_of_animal10N/:/src/animal10N/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_animal10N.py"`
 
-- Please replace `absolute_path_of_animal10N` with your absolute path of Clothing1M dataset.
+- Please replace `absolute_path_of_animal10N` with your absolute path of Animal10N dataset
 
-- To record the progress with all the loss curves, accuracy curves and sample image, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials. 
+- To record the progress with all the loss curves, accuracy curves and sample images, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials
 
+### Running Red Mini-ImageNet (WandB enabled)
+
+- In order to run Red Mini-ImageNet you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
+
+`wandb docker run --gpus 1 -v absolute_path_of_redMini/:/src/red_blue/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_animal10N.py"`
+
+- Please replace `absolute_path_of_redMini` with your absolute path of Red Mini-ImageNet dataset
+
+- To record the progress with all the loss curves, accuracy curves and sample images, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials
+
+- Following the literature the noise rates considered were 0.2, 0.4, 0.6, 0.8 (default is 0.2) 
 
 ### Running Clothing1M (WandB enabled)
 
-- In order to tun Clothing1M you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
+- In order to run Clothing1M you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
 
 `wandb docker run --gpus 1 -v absolute_path_of_clothing1M/clothing1M:/src/clothing1M/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_clothing1M.py"`
 
-- Please replace `absolute_path_of_clothing1M/clothing1M` with your absolute path of Clothing1M dataset.
+- Please replace `absolute_path_of_clothing1M/clothing1M` with your absolute path of Clothing1M dataset
 
-- To record the progress with all the loss curves, accuracy curves and sample image, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials. 
+- To record the progress with all the loss curves, accuracy curves and sample images, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials 
 
-- Following the literature, pretrained model is used for ResNet, so it might download some pretrained weights automatically. 
+- Following the literature, pretrained model is used for ResNet, so it might download some pretrained weights automatically 
 
 ### Extra commands (Just to play , not needed for running on CIFAR10/CIFAR100)
 

@@ -47,7 +47,7 @@ To run this project, you will need to add the following environment variables to
 ## Run Locally
 
 
-`$ python instanceGM.py -r 0.5`
+`$ python instanceGM.py --r 0.5`
 
 - r is the noise rate
 - The above code is for CIFAR10 only soon all the docker files and for other dataset would be provided.
@@ -59,17 +59,30 @@ For installing docker on your system please follow official [Docker Documentatio
 
 ### Running CIFAR10
 
-- To run it on CIFAR-10 (only this dataset is already inside docker image), run the following command from your terminal
+- To run it on CIFAR-10 (this dataset is already inside docker image), run the following command from your terminal
 
-`docker run --gpus 1 -ti arpit2412/instancegm:1 /bin/bash -c "cd /src && source activate instanceGM && python instanceGM.py"`
+`docker run --gpus 1 -ti arpit2412/instancegm:cifar /bin/bash -c "cd /src && source activate instanceGM && python instanceGM.py --r 0.5"`
 
-- The above command conatins gpu support and automatically pull the docker image from docker hub if not found locally
+- The above command conatins gpu support and automatically pull the docker image from docker hub if not found locally, and run it after activating the environment
 
-### Extra commands (Just to play , not needed for running on CIFAR10)
+- To change the noise rate change the argument --r, be default it's 0.5
+
+### Running CIFAR100
+
+- To run it on CIFAR-100 (this dataset is already inside docker image), run the following command from your terminal
+
+`docker run --gpus 1 -ti arpit2412/instancegm:cifar /bin/bash -c "cd /src && source activate instanceGM && python instanceGM.py --num_class 100 --data_path ./cifar-100 --dataset cifar100 --r 0.5"`
+
+
+- To change the noise rate change the argument --r, be default it's 0.5, and changing the settings from CIFAR10 to CIFAR100
+
+
+
+### Extra commands (Just to play , not needed for running on CIFAR10/CIFAR100)
 
 - Pull image from docker hub 
 
-`docker pull arpit2412/instancegm:1`
+`docker pull arpit2412/instancegm:cifar`
 
 - If the pull is successfull then following command should list the image 
 
@@ -77,11 +90,14 @@ For installing docker on your system please follow official [Docker Documentatio
 
 - All the files are present in src folder in docker image. To check all the files:
 
-`docker run -ti arpit2412/instancegm:1 /bin/bash`
+`docker run -ti arpit2412/instancegm:cifar /bin/bash`
 `cd src`
 `ls`
 
 
+- If you wanna build the image from the files procided in the github repository
+
+`docker build -f Dockerfile_train -t docker_instancegm ."`
 
 ## Results
 

@@ -36,31 +36,9 @@ For adding artifical Instance-Dependent noise in CIFAR10/100, we use the code fr
 - [Red Mini-ImageNet](https://paperswithcode.com/sota/image-classification-on-red-miniimagenet-20)
 - [Animal-10N](https://docs.activeloop.ai/datasets/animal-animal10n-dataset)
 - [Clothing-1M](https://github.com/Cysu/noisy_label)
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`pip install -r requirements.txt`
 
 
-
-## Run Locally
-
-- Getting the dataset
-
--CIFAR10
-
-`bash cifar10.sh`
-
-- Run the model
-
-`$ python instanceGM.py --r 0.5`
-
-- r is the noise rate
-- The above code is for CIFAR10 only soon all the docker files and for other dataset would be provided.
-
-
-## Run using Docker (Preferred)
+## Run using conatiner Docker (Preferred)
 
 For installing docker on your system please follow official [Docker Documentation](https://docs.docker.com/)
 
@@ -83,7 +61,28 @@ For installing docker on your system please follow official [Docker Documentatio
 
 - To change the noise rate change the argument --r, be default it's 0.5, and changing the settings from CIFAR10 to CIFAR100
 
+### Running Animal10N (WandB enabled)
 
+- In order to tun Animal10N you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
+
+`wandb docker run --gpus 1 -v absolute_path_of_animal10N/:/src/animal10N/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_animal10N.py"`
+
+- Please replace `absolute_path_of_animal10N` with your absolute path of Clothing1M dataset.
+
+- To record the progress with all the loss curves, accuracy curves and sample image, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials. 
+
+
+### Running Clothing1M (WandB enabled)
+
+- In order to tun Clothing1M you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
+
+`wandb docker run --gpus 1 -v absolute_path_of_clothing1M/clothing1M:/src/clothing1M/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_clothing1M.py"`
+
+- Please replace `absolute_path_of_clothing1M/clothing1M` with your absolute path of Clothing1M dataset.
+
+- To record the progress with all the loss curves, accuracy curves and sample image, we used [wandb](https://wandb.ai/). If you are using it for first time it might ask you for wandb credentials. 
+
+- Following the literature, pretrained model is used for ResNet, so it might download some pretrained weights automatically. 
 
 ### Extra commands (Just to play , not needed for running on CIFAR10/CIFAR100)
 
@@ -105,6 +104,27 @@ For installing docker on your system please follow official [Docker Documentatio
 - If you wanna build the image from the files procided in the github repository
 
 `docker build -f Dockerfile_train -t docker_instancegm ."`
+
+
+## Run without container
+
+### Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`pip install -r requirements.txt`
+
+### Getting the CIFAR10 dataset
+
+`bash cifar10.sh`
+
+### Run the model
+
+`$ python instanceGM.py --r 0.5`
+
+- r is the noise rate
+- The above code is for CIFAR10 only soon all the docker files and for other dataset would be provided.
+
 
 ## Results
 

@@ -14,7 +14,7 @@ Noisy labels are unavoidable yet troublesome in the ecosystem of deep learning b
 Figure 2 from [InstanceGM](https://arxiv.org/abs/2209.00906)
 . The proposed InstanceGM trains the Classifiers to output clean labels for instance-dependent noisy-label samples. We first
 warmup our two classifiers (Classifier-{11,12}) using the classification loss, and then with classification loss we train the GMM to separate
-clean and noisy samples with the semi-supervised model MixMatch [5] from the DivideMix [33] stage. Additionally, another set of
+clean and noisy samples with the semi-supervised model MixMatch from the DivideMix stage. Additionally, another set of
 encoders (Encoder-{1,2}) are used to generate the latent image features as depicted in the graphical model from Fig. 1. Furthermore,
 for image reconstruction, the decoders (Decoder-{1,2}) are used by utilizing the continuous Bernoulli loss, and another set of classifiers
 (Classifier-{21,22}) helps to identify the original noisy labels using the standard cross-entropy loss

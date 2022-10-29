@@ -7,6 +7,42 @@ Noisy labels are unavoidable yet troublesome in the ecosystem of deep learning b
 
 ![Instance-Dependent Noise](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/Instance.gif)
 
+
+## Badges at the time of acceptance 2022
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/learning-with-noisy-labels-on-animal)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-animal?p=instance-dependent-noisy-label-learning-via)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/learning-with-noisy-labels-on-cifar-10)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-cifar-10?p=instance-dependent-noisy-label-learning-via)
+
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/learning-with-noisy-labels-on-cifar-100)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-cifar-100?p=instance-dependent-noisy-label-learning-via)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/learning-with-noisy-labels-on-red)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-red?p=instance-dependent-noisy-label-learning-via)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/image-classification-on-red-miniimagenet-40)](https://paperswithcode.com/sota/image-classification-on-red-miniimagenet-40?p=instance-dependent-noisy-label-learning-via)
+
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/learning-with-noisy-labels-on-red-1)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-red-1?p=instance-dependent-noisy-label-learning-via)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/image-classification-on-red-miniimagenet-60)](https://paperswithcode.com/sota/image-classification-on-red-miniimagenet-60?p=instance-dependent-noisy-label-learning-via)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/learning-with-noisy-labels-on-red-2)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-red-2?p=instance-dependent-noisy-label-learning-via)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/image-classification-on-red-miniimagenet-80)](https://paperswithcode.com/sota/image-classification-on-red-miniimagenet-80?p=instance-dependent-noisy-label-learning-via)
+
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/learning-with-noisy-labels-on-red-3)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-red-3?p=instance-dependent-noisy-label-learning-via)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/image-classification-on-red-miniimagenet-20)](https://paperswithcode.com/sota/image-classification-on-red-miniimagenet-20?p=instance-dependent-noisy-label-learning-via)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instance-dependent-noisy-label-learning-via/image-classification-on-clothing1m)](https://paperswithcode.com/sota/image-classification-on-clothing1m?p=instance-dependent-noisy-label-learning-via)
+
+
+
+
+
+
+
 ## Methodology
 
 ![Methodology](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/Methodology.png)

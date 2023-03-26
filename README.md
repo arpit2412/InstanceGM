@@ -99,6 +99,26 @@ For adding artifical Instance-Dependent noise in CIFAR10/100, we use the code fr
 - [Clothing-1M](https://github.com/Cysu/noisy_label)
 
 
+## Run without container
+
+### Environment Variables
+
+To run this project, you will need to add the following libraries from requirements file
+
+`pip install -r requirements.txt`
+
+### Getting the CIFAR10 dataset
+
+`bash cifar10.sh`
+
+### Run the model
+
+`$ python instanceGM.py --r 0.5`
+
+- r is the noise rate
+
+
+
 ## Run using conatiner Docker (Preferred)
 
 For installing docker on your system please follow official [Docker Documentation](https://docs.docker.com/)
@@ -184,25 +204,6 @@ For installing docker on your system please follow official [Docker Documentatio
 - If you wanna build the image from the files procided in the github repository
 
 `docker build -f Dockerfile_train -t docker_instancegm .`
-
-
-## Run without container
-
-### Environment Variables
-
-To run this project, you will need to add the following libraries from requirements file
-
-`pip install -r requirements.txt`
-
-### Getting the CIFAR10 dataset
-
-`bash cifar10.sh`
-
-### Run the model
-
-`$ python instanceGM.py --r 0.5`
-
-- r is the noise rate
 
 
 ## Results

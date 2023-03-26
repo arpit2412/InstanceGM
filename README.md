@@ -1,6 +1,20 @@
 
 # InstanceGM: Instance-Dependent Noisy Label Learning via Graphical Modelling (IEEE/CVF WACV 2023 Round 1)
 
+Paper Link: https://openaccess.thecvf.com/content/WACV2023/html/Garg_Instance-Dependent_Noisy_Label_Learning_via_Graphical_Modelling_WACV_2023_paper.html
+
+## Please Cite
+```
+ @InProceedings{Garg_2023_WACV,
+    author    = {Garg, Arpit and Nguyen, Cuong and Felix, Rafael and Do, Thanh-Toan and Carneiro, Gustavo},
+    title     = {Instance-Dependent Noisy Label Learning via Graphical Modelling},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2023},
+    pages     = {2288-2298}
+}
+```
+
 - Abstract 
 
 Noisy labels are unavoidable yet troublesome in the ecosystem of deep learning because models can easily overfit them. There are many types of label noise, such as symmetric, asymmetric and instance-dependent noise (IDN), with IDN being the only type that depends on image information. Such dependence on image information makes IDN a critical type of label noise to study, given that labelling mistakes are caused in large part by insufficient or ambiguous information about the visual classes present in images. Aiming to provide an effective technique to address IDN, we present a new graphical modelling approach called InstanceGM, that combines discriminative and generative models. The main contributions of InstanceGM are: i) the use of the continuous Bernoulli distribution to train the generative model, offering significant training advantages, and ii) the exploration of a state-of-the-art noisy-label discriminative classifier to generate clean labels from instance-dependent noisy-label samples. InstanceGM is competitive with current noisy-label learning approaches, particularly in IDN benchmarks using synthetic and real-world datasets, where our method shows better accuracy than the competitors in most experiments. 
@@ -126,6 +140,8 @@ For installing docker on your system please follow official [Docker Documentatio
 
 - In order to run Red Mini-ImageNet you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
 
+- Dataset can be download from here (inly for research purposes): https://universityofadelaide.box.com/s/eplsn764r5pwy0nr3jej4r512qdresov 
+
 `wandb docker run --gpus 1 -v absolute_path_of_redMini/:/src/red_blue/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_redMini.py"`
 
 - Please replace `absolute_path_of_redMini` with your absolute path of Red Mini-ImageNet dataset
@@ -213,11 +229,13 @@ To run this project, you will need to add the following libraries from requireme
 
 ## Please Cite
 ```
- @article{garg2022instance,
-  title={Instance-Dependent Noisy Label Learning via Graphical Modelling},
-  author={Garg, Arpit and Nguyen, Cuong and Felix, Rafael and Do, Thanh-Toan and Carneiro, Gustavo},
-  journal={arXiv preprint arXiv:2209.00906},
-  year={2022}
+ @InProceedings{Garg_2023_WACV,
+    author    = {Garg, Arpit and Nguyen, Cuong and Felix, Rafael and Do, Thanh-Toan and Carneiro, Gustavo},
+    title     = {Instance-Dependent Noisy Label Learning via Graphical Modelling},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2023},
+    pages     = {2288-2298}
 }
 ```
 ## License

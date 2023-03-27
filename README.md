@@ -160,7 +160,7 @@ For installing docker on your system please follow official [Docker Documentatio
 
 - In order to run Red Mini-ImageNet you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
 
-- Dataset can be download from here (inly for research purposes): https://universityofadelaide.box.com/s/eplsn764r5pwy0nr3jej4r512qdresov 
+- Dataset can be download from here (only for research purposes)
 
 `wandb docker run --gpus 1 -v absolute_path_of_redMini/:/src/red_blue/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_redMini.py"`
 

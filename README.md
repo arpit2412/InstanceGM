@@ -160,6 +160,8 @@ For installing docker on your system please follow official [Docker Documentatio
 
 - In order to run Red Mini-ImageNet you must have dataset stored in your local machine and then we can mount that folder to docker image using `-v` parameter while running InstanceGM
 
+- Dataset link: https://google.github.io/controlled-noisy-web-labels/download.html
+
 - Directory structure of Red Mini-ImageNet is mentioned in `redMini.txt`
 
 `wandb docker run --gpus 1 -v absolute_path_of_redMini/:/src/red_blue/ -ti instancegm /bin/bash -c "cd ./src && source activate instanceGM && python instanceGM_redMini.py"`

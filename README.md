@@ -242,7 +242,7 @@ For installing docker on your system please follow official [Docker Documentatio
 }
 ```
 ## License
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+This work is licensed under a Custom License. Non-commercial use is permitted without restrictions, while commercial users must contact the copyright holder for licensing permission.
 #
 ![Logo](https://github.com/arpit2412/InstanceGM/blob/main/Result%20Images/aiml_mono-landscape-600x182.png)
 #
